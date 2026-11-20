@@ -1,0 +1,130 @@
+{
+  "spark": "4.0.1",
+  "fuso_data_pas": "UTC",
+  "referencias": [
+    "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/documentos/Curadoria-Governanca-Dados-FocosFogoAtivo.pdf",
+    "https://data.inpe.br/queimadas/faq/"
+  ],
+  "bronze_sha256": {
+    "focos_br_ref_2024.csv": "19d1ddd2bdb5bec77042814ced10d41840f8b2a6dbfe361593b12bebd764576c",
+    "focos_br_ref_2025.csv": "4d514c8afb1a83b00fb0caa5f727f453390159f535024fe8c62f69a925b964ca"
+  },
+  "totais": {
+    "antes": 414692,
+    "validos": 414692,
+    "quarentena": 0
+  },
+  "por_arquivo": [
+    {
+      "arquivo_origem": "focos_br_ref_2024.csv",
+      "ano_origem": 2024,
+      "antes": 278299,
+      "validos": 278299,
+      "quarentena": 0,
+      "ausentes_antes": {
+        "id_bdq": 0,
+        "foco_id": 0,
+        "lat": 0,
+        "lon": 0,
+        "data_pas": 0,
+        "pais": 0,
+        "estado": 0,
+        "municipio": 0,
+        "bioma": 0
+      },
+      "linhas_por_motivo": {
+        "ausente_id_bdq": 0,
+        "ausente_foco_id": 0,
+        "ausente_lat": 0,
+        "ausente_lon": 0,
+        "ausente_data_pas": 0,
+        "conversao_invalida_id_bdq": 0,
+        "conversao_invalida_lat": 0,
+        "conversao_invalida_lon": 0,
+        "conversao_invalida_data_pas": 0,
+        "fora_do_intervalo_lat": 0,
+        "fora_do_intervalo_lon": 0,
+        "data_fora_do_ano_origem": 0,
+        "duplicata_exata": 0,
+        "id_bdq_repetido": 0,
+        "foco_id_repetido": 0
+      },
+      "linhas_duplicadas_entre_arquivos": {
+        "duplicata_exata_entre_arquivos": 0,
+        "id_bdq_repetido_entre_arquivos": 0,
+        "foco_id_repetido_entre_arquivos": 0
+      },
+      "coordenadas_com_espacos": {
+        "lat": 278299,
+        "lon": 278299
+      }
+    },
+    {
+      "arquivo_origem": "focos_br_ref_2025.csv",
+      "ano_origem": 2025,
+      "antes": 136393,
+      "validos": 136393,
+      "quarentena": 0,
+      "ausentes_antes": {
+        "id_bdq": 0,
+        "foco_id": 0,
+        "lat": 0,
+        "lon": 0,
+        "data_pas": 0,
+        "pais": 0,
+        "estado": 0,
+        "municipio": 0,
+        "bioma": 0
+      },
+      "linhas_por_motivo": {
+        "ausente_id_bdq": 0,
+        "ausente_foco_id": 0,
+        "ausente_lat": 0,
+        "ausente_lon": 0,
+        "ausente_data_pas": 0,
+        "conversao_invalida_id_bdq": 0,
+        "conversao_invalida_lat": 0,
+        "conversao_invalida_lon": 0,
+        "conversao_invalida_data_pas": 0,
+        "fora_do_intervalo_lat": 0,
+        "fora_do_intervalo_lon": 0,
+        "data_fora_do_ano_origem": 0,
+        "duplicata_exata": 0,
+        "id_bdq_repetido": 0,
+        "foco_id_repetido": 0
+      },
+      "linhas_duplicadas_entre_arquivos": {
+        "duplicata_exata_entre_arquivos": 0,
+        "id_bdq_repetido_entre_arquivos": 0,
+        "foco_id_repetido_entre_arquivos": 0
+      },
+      "coordenadas_com_espacos": {
+        "lat": 136393,
+        "lon": 136393
+      }
+    }
+  ],
+  "nulos_por_campo_no_parquet": {
+    "id_bdq": 0,
+    "foco_id": 0,
+    "lat": 0,
+    "lon": 0,
+    "data_pas": 0,
+    "pais": 0,
+    "estado": 0,
+    "municipio": 0,
+    "bioma": 0
+  },
+  "regras": {
+    "ausentes": "Campos obrigatórios vazios vão para quarentena. Pais, estado, município e bioma vazios viram nulos e são mantidos se o resto for válido.",
+    "invalidos": "Conversões malformadas, coordenadas fora da faixa ou não finitas e datas fora do ano do CSV vão para quarentena.",
+    "duplicados": "Todas as ocorrências de linhas idênticas ou de chaves repetidas vão para quarentena, inclusive entre arquivos.",
+    "normalizacao": "Espaços removidos de lat/lon. Ano e mês derivados em UTC.",
+    "contagens": "A contagem por motivo mede linhas. Uma linha pode ter vários motivos."
+  },
+  "segundos": {
+    "leitura_classificacao_e_resumo": 24.263,
+    "gravacao_e_releitura_parquet": 11.941
+  },
+  "releitura_parquet_validada": true
+}

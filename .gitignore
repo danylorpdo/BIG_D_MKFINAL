@@ -1,0 +1,43 @@
+# Ambientes e caches locais
+/.venv/
+/venv/
+/.env
+/.env.*
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.cache/
+
+# Saídas da demonstração e temporários do pipeline
+/.demo/
+/.auditoria-*/
+.etapa-*/
+.spark-*/
+.teste-*/
+.ingestao-*/
+.figuras-*/
+spark-warehouse/
+metastore_db/
+derby.log
+*.crc
+*.tmp
+*.swp
+*.log
+.DS_Store
+
+# Dados reproduzíveis e materiais entregues separadamente
+/data/
+/documentacao/
+/apresentacao/
+/resultados/indicadores/analise_exploratoria.md
+
+# Acompanhamento e configuração local
+/AGENTS.md
+/CURRENT_TASK.md
+/.agents/
+/.codex/
+/.aws/
+/prompts/
